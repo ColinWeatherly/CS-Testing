@@ -7,6 +7,7 @@ namespace Git_Test_Program
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            Console.ReadKey();
         }
     }
 }
