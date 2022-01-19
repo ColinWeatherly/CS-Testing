@@ -8,7 +8,14 @@ namespace Git_Test_Program
         {
             Console.WriteLine("I am thinking of a number between 1 and 100");
             var rand = new Random();
-            var randomNum = rand.Next(0, 101);
+            int randomNum = Convert.ToInt32(rand.Next(0, 101));
+            int guessNum = Convert.ToInt32(Console.ReadLine());
+            Program tester = new Program();
+            while(tester.guessResult(guessNum, randomNum) == false)
+            {
+                Console.WriteLine("Try again: ");
+                guessNum = Convert.ToInt32(Console.ReadLine());
+            }
         }
 
         bool guessResult(int numGuess, int randomNum)
@@ -25,7 +32,7 @@ namespace Git_Test_Program
             }
             else
             {
-                Console.WriteLine("Correct! The number was" + randomNum);
+                Console.WriteLine("Correct! The number was " + randomNum + '.');
                 return true;
             }
         }
