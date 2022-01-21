@@ -6,9 +6,18 @@ namespace Git_Test_Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("I am thinking of a number between 1 and 100");
+            int startNum = 0;
+            int stopNum = 0;
+            while (startNum >= stopNum)
+            {
+                Console.WriteLine("Enter a starting number: ");
+                startNum = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter a stopping number: ");
+                stopNum = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("I am thinking of a number between " + startNum + " and " + stopNum);
             var rand = new Random();
-            int randomNum = Convert.ToInt32(rand.Next(0, 101));
+            int randomNum = Convert.ToInt32(rand.Next(startNum, stopNum + 1));
             int guessNum = Convert.ToInt32(Console.ReadLine());
             Program tester = new Program();
             while(tester.guessResult(guessNum, randomNum) == false)
